@@ -65,13 +65,7 @@ const Home = () => {
           <motion.img
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8cEBmtLk3HpTLN0TtcnznGx_T3b9NnNU443HtgHA4B0QJm4vEUkWcfTEWsciom2uGU26peitO6ceedU3bkw9hQRV6LgjqHJ2tHlbESj2-ZBaPS2TYQhH3e7THnOJdX2mpsD8vF1e2EJf5IowxJTiRb_CCXOunJYJtJu_7Ynr1eihCjsNIAMUlfcmBLZRKEN3IUzm9HpOF4RD79dLcA7sQjsu-FxYsRa6YtwelWF45xNiwH3wPWUE9qwOsIFmwDGawR58MJqWFuaRE"
             alt="Hero"
-            className="w-full h-full object-cover" animate={{
-              y: [0, -10, 0],
-            }}
-            transition={{
-              repeat: Infinity,
-              duration: 4,
-            }}
+            className="w-full h-full object-cover"
           />
         </div>
 
