@@ -207,7 +207,7 @@ const Cart = () => {
                   className="flex-1 border rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-violet-500"
                 />
 
-                <button className="bg-gray-200 px-5 py-1 rounded-xl font-medium hover:bg-gray-300">
+                <button className="bg-gray-200 px-5 py-3 rounded-xl font-medium hover:bg-gray-300 whitespace-nowrap">
                   Apply
                 </button>
               </div>
