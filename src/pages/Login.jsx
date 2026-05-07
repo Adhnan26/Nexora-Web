@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 
 import toast from "react-hot-toast";
 
+import { motion } from "framer-motion";
+
 const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
 
@@ -58,7 +60,10 @@ const Login = () => {
 
         </div>
 
-        <div className="bg-white rounded-3xl p-8 shadow-xl border">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.4 }} className="bg-white rounded-3xl p-8 shadow-xl border">
 
           {/* TOGGLE */}
           <div className="flex p-1 bg-gray-100 rounded-xl mb-6">
@@ -66,8 +71,8 @@ const Login = () => {
             <button
               onClick={() => setIsLogin(true)}
               className={`flex-1 py-2 rounded-lg ${isLogin
-                  ? "bg-white shadow text-violet-600"
-                  : "text-gray-500"
+                ? "bg-white shadow text-violet-600"
+                : "text-gray-500"
                 }`}
             >
               Login
@@ -76,8 +81,8 @@ const Login = () => {
             <button
               onClick={() => setIsLogin(false)}
               className={`flex-1 py-2 rounded-lg ${!isLogin
-                  ? "bg-white shadow text-violet-600"
-                  : "text-gray-500"
+                ? "bg-white shadow text-violet-600"
+                : "text-gray-500"
                 }`}
             >
               Sign Up
@@ -139,9 +144,9 @@ const Login = () => {
 
           </form>
 
-        </div>
-      </div>
+      </motion.div>
     </div>
+    </div >
   );
 };
 

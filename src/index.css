@@ -1,16 +1,30 @@
 @import "tailwindcss";
 
-body {
-  caret-color: transparent;
+/* SMOOTH SCROLL */
+html {
+  scroll-behavior: smooth;
 }
 
+/* REMOVE BLUE TAP HIGHLIGHT IN MOBILE */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* BETTER TEXT RENDERING */
+body {
+  caret-color: transparent;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* INPUT CURSOR ENABLE */
 input,
 textarea {
   caret-color: auto;
 }
 
 /* HIDE SCROLLBAR */
-
 ::-webkit-scrollbar {
   display: none;
 }
@@ -19,4 +33,32 @@ html,
 body {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* IMAGE DRAG DISABLE */
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* BUTTON FEEL */
+button {
+  cursor: pointer;
+}
+
+/* REMOVE INPUT OUTLINE FLASH */
+input,
+textarea,
+button,
+select {
+  outline: none;
+}
+
+/* PREVENT HORIZONTAL SCROLL */
+body {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
 }

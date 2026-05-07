@@ -3,6 +3,7 @@ import { FiTruck, FiBox, FiStar, FiShield, FiHeadphones, FiRefreshCw, } from "re
 import ProductCard from "../components/ProductCard";
 import products from "../data/products";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const categories = [
   {
@@ -61,16 +62,27 @@ const Home = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-white via-white/60 to-transparent z-10"></div>
 
           {/* IMAGE */}
-          <img
+          <motion.img
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8cEBmtLk3HpTLN0TtcnznGx_T3b9NnNU443HtgHA4B0QJm4vEUkWcfTEWsciom2uGU26peitO6ceedU3bkw9hQRV6LgjqHJ2tHlbESj2-ZBaPS2TYQhH3e7THnOJdX2mpsD8vF1e2EJf5IowxJTiRb_CCXOunJYJtJu_7Ynr1eihCjsNIAMUlfcmBLZRKEN3IUzm9HpOF4RD79dLcA7sQjsu-FxYsRa6YtwelWF45xNiwH3wPWUE9qwOsIFmwDGawR58MJqWFuaRE"
             alt="Hero"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover" animate={{
+              y: [0, -10, 0],
+            }}
+            transition={{
+              repeat: Infinity,
+              duration: 4,
+            }}
           />
         </div>
 
         {/* CONTENT */}
         <div className="max-w-7xl mx-auto px-6 relative z-20">
-          <div className="max-w-2xl">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="max-w-2xl"
+          >
 
             {/* TAG */}
             <span className="inline-block px-4 py-1.5 rounded-full bg-violet-100 text-violet-600 text-sm mb-6">
@@ -93,12 +105,16 @@ const Home = () => {
             {/* BUTTONS */}
             <div className="flex items-center gap-6">
 
-              <button
+              <motion.button
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0px 20px 40px rgba(139,92,246,0.35)",
+                }}
                 onClick={() => navigate("/products")}
                 className="bg-violet-600 text-white px-6 py-3 rounded-xl font-semibold shadow hover:bg-violet-700 transition active:scale-95"
               >
                 Shop the Collection
-              </button>
+              </motion.button>
 
               <button className="flex items-center gap-2 font-semibold text-gray-900 group">
                 Learn more
@@ -109,13 +125,13 @@ const Home = () => {
 
             </div>
 
-          </div>
+          </motion.div>
         </div>
 
-      </section>
+      </section >
 
       {/* PROMO */}
-      <section className="bg-violet-600 py-4">
+      < section className="bg-violet-600 py-4" >
         <div className="max-w-7xl mx-auto px-6 flex justify-center items-center gap-3 text-white">
 
           <FiTruck className="text-lg" />
@@ -126,10 +142,10 @@ const Home = () => {
           </p>
 
         </div>
-      </section>
+      </section >
 
       {/* CATEGORIES */}
-      <section className="py-20 bg-white">
+      < section className="py-20 bg-white" >
         <div className="max-w-7xl mx-auto px-6">
 
           {/* HEADER */}
@@ -192,10 +208,10 @@ const Home = () => {
 
           </div>
         </div>
-      </section>
+      </section >
 
       {/* FEATURED PRODUCTS */}
-      <section className="py-20">
+      < section className="py-20" >
         <div className="max-w-7xl mx-auto px-6">
 
           {/* HEADER */}
@@ -223,10 +239,10 @@ const Home = () => {
 
           </div>
         </div>
-      </section>
+      </section >
 
       {/* BOTTOM SECTION */}
-      <section className="py-20 bg-gray-100">
+      < section className="py-20 bg-gray-100" >
         <div className="max-w-7xl mx-auto px-6">
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -280,11 +296,11 @@ const Home = () => {
 
           </div>
         </div>
-      </section>
+      </section >
 
 
       {/* WHY CHOOSE US */}
-      <section className="py-20 bg-gray-50">
+      < section className="py-20 bg-gray-50" >
 
         <div className="max-w-7xl mx-auto px-6">
 
@@ -380,11 +396,11 @@ const Home = () => {
 
         </div>
 
-      </section>
+      </section >
 
 
       {/* CUSTOMER REVIEWS */}
-      <section className="py-20 bg-white">
+      < section className="py-20 bg-white" >
         <div className="max-w-7xl mx-auto px-6">
 
           {/* HEADER */}
@@ -514,9 +530,9 @@ const Home = () => {
 
           </div>
         </div>
-      </section>
+      </section >
 
-    </div>
+    </div >
   );
 };
 
