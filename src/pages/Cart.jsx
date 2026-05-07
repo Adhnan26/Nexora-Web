@@ -200,14 +200,14 @@ const Cart = () => {
                 Promo Code
               </label>
 
-              <div className="flex gap-2">
+              <div className="flex flex-col sm:flex-row gap-2">
                 <input
                   type="text"
                   placeholder="Enter promo code"
                   className="flex-1 border rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-violet-500"
                 />
 
-                <button className="bg-gray-200 px-5 rounded-xl font-medium hover:bg-gray-300">
+                <button className="bg-gray-200 px-5 py-1 rounded-xl font-medium hover:bg-gray-300">
                   Apply
                 </button>
               </div>
