@@ -1,8 +1,10 @@
 import React, { useContext, useState } from "react";
+import { WishlistContext } from "../context/WishlistContext";
 import {
     FiMenu,
     FiUser,
     FiShoppingCart,
+    FiHeart,
     FiSearch,
     FiX,
     FiLogOut,
@@ -16,6 +18,8 @@ import { AuthContext } from "../context/AuthContext";
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [search, setSearch] = useState("");
+
+    const { wishlist } = useContext(WishlistContext);
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -49,8 +53,8 @@ const Navbar = () => {
                     <Link
                         to="/"
                         className={`${isActive("/")
-                                ? "text-violet-600 border-b-2 border-violet-600 pb-1"
-                                : "text-gray-600 hover:text-violet-600"
+                            ? "text-violet-600 border-b-2 border-violet-600 pb-1"
+                            : "text-gray-600 hover:text-violet-600"
                             }`}
                     >
                         Home
@@ -59,8 +63,8 @@ const Navbar = () => {
                     <Link
                         to="/products"
                         className={`${isActive("/products")
-                                ? "text-violet-600 border-b-2 border-violet-600 pb-1"
-                                : "text-gray-600 hover:text-violet-600"
+                            ? "text-violet-600 border-b-2 border-violet-600 pb-1"
+                            : "text-gray-600 hover:text-violet-600"
                             }`}
                     >
                         Products
@@ -104,6 +108,20 @@ const Navbar = () => {
                         </button>
                     )}
 
+                    {/* Wishlist */}
+                    <Link
+                        to="/wishlist"
+                        className="relative text-gray-600 hover:text-violet-600 text-lg"
+                    >
+                        <FiHeart />
+
+                        {wishlist.length > 0 && (
+                            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full">
+                                {wishlist.length}
+                            </span>
+                        )}
+                    </Link>
+
                     {/* CART */}
                     <Link
                         to="/cart"
@@ -132,8 +150,8 @@ const Navbar = () => {
             {/* MOBILE MENU */}
             <div
                 className={`md:hidden bg-white border-t overflow-hidden transition-all duration-500 ${menuOpen
-                        ? "max-h-64 py-4 opacity-100"
-                        : "max-h-0 opacity-0"
+                    ? "max-h-64 py-4 opacity-100"
+                    : "max-h-0 opacity-0"
                     }`}
             >
                 <div className="px-6">

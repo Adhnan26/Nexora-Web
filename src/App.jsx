@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Login from './pages/Login'
 import Cart from './pages/Cart'
+import Wishlist from "./pages/Wishlist";
 import ProductList from './pages/ProductList'
 import { Toaster } from "react-hot-toast";
 import ProductDetails from "./pages/ProductDetails";
@@ -49,6 +50,8 @@ const App = () => {
               </ProtectedRoute>
             }
           />
+
+          <Route path="/wishlist" element={<Wishlist />} />
         </Routes>
         <Footer />
       </BrowserRouter>
