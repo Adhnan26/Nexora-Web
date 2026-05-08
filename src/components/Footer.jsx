@@ -66,7 +66,7 @@ const Footer = () => {
             <div className="max-w-7xl mx-auto px-6 py-6 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
 
                 <p className="text-xs text-gray-400">
-                    © 2024 Nexora Technologies. All rights reserved.
+                    © 2026 Nexora Technologies. All rights reserved.
                 </p>
 
                 <div className="flex items-center gap-4">
